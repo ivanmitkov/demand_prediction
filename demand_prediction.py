@@ -26,7 +26,7 @@ from datetime import datetime
 import time
 from sklearn.preprocessing import StandardScaler
 
-os.chdir(r'C:\Users\ivan.mitkov\Documents\project\hosp')
+os.chdir(r'your/local/repo')
 
 df = pd.read_csv(r"task.csv")
 
