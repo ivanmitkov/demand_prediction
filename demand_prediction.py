@@ -64,7 +64,7 @@ df_stacked['mean_for_this_day_of_the_week'] = df_stacked.groupby(['location', 'd
 df_stacked['std_for_this_day_of_the_week'] = df_stacked.groupby(['location', 'dayofweek'])['sales'].transform(lambda s: s.shift().expanding().std())
 df_stacked['distance'] = df['target_value'] - df['sales']
 df_stacked['diff_shifted_1'] = df_stacked.groupby(['location', 'days_ahead', 'dayofweek'])['distance'].shift(periods = 1)
-df_stacked['diff_shifted_2']=df_stacked.groupby(['location', 'days_ahead', 'dayofweek'])['distance'].shift(periods = 1)
+df_stacked['diff_shifted_2']=df_stacked.groupby(['location', 'days_ahead', 'dayofweek'])['distance'].shift(periods = 2)
 
 #%% fill nans with extrem value. nans are caused by shifting values
 df_stacked = df_stacked.fillna(999999)
